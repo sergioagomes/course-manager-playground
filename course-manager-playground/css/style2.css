@@ -1,0 +1,501 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Container flexível para os cards */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espaço entre os cards */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  width: 300px; /* Largura fixa para cada card */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto; /* Impede que os cards cresçam ou encolham */
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+.course-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.course-button-none {
+  display: none;
+}
+
+.course-button:hover {
+  background-color: #0056b3;
+}
+
+.source-code-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  gap: 8px;
+}
+
+.source-code-button i {
+  font-size: 18px;
+}
+
+.source-code-button:hover {
+  background-color: #555;
+}
+
+.display-none {
+  display: none;
+}
+
+.search-container {
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-bar:focus {
+  border-color: #4CAF50;
+}
+
+.tags-container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag {
+  background-color: #e9ecef;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tag:hover {
+  background-color: #dde1e5;
+}
+
+.tag.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Estilos para a barra de progresso */
+.progress-bar-container {
+  width: 100%;
+  height: 5px;
+  background-color: #e0e0e0;
+  border-radius: 2px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4CAF50;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.progress-tooltip {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.progress-bar-container:hover .progress-tooltip {
+  opacity: 1;
+}
+
+/* ACCORDION */
+
+/* Estilos para o accordion */
+.accordion-btn {
+  width: 100%;
+  text-align: left;
+  padding: 12px 15px;
+  border: none;
+  background-color: #111;
+  /* background-color: #f8f9fa; */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  color: white;
+  border-bottom: 1px solid white;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-btn:hover {
+  background-color: #e9ecef;
+  color: #111;
+}
+
+.accordion-btn.active {
+  background-color: #111;
+  /* background-color: #007bff; */
+  color: white;
+}
+
+.accordion-btn.active .fa-caret-down {
+  transform: rotate(180deg);
+}
+
+.accordion-btn .fa-caret-down {
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px 15px;
+  background-color: #111;
+  /* background-color: #fff; */
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-content.active {
+  display: block;
+}
+
+.accordion-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.accordion-content li {
+  margin: 8px 0;
+}
+
+.accordion-content a {
+  text-decoration: none;
+  color: white;
+  /* color: #333; */
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-content a:hover {
+  background-color: #f1f1f1;
+  color: #111;
+}
+
+.accordion-content a i {
+  margin-right: 10px;
+  /* color: #007bff; */
+  color: white;
+}
+
+.accordion-content a:hover i {
+  margin-right: 10px;
+  color: #111;
+  /* color: white; */
+}
+
+/* FLIP CARD */
+/* Estilos para o efeito de flip */
+.card {
+  position: relative;
+  perspective: 1000px;
+  width: 300px;
+  height: 480px; /* Altura fixa para garantir consistência */
+  cursor: pointer;
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove paddings padrão */
+  overflow: hidden; /* Evita que o conteúdo vaze */
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0; /* Remove margens */
+}
+
+.card .front {
+  background-color: #fff;
+  transform: rotateY(0deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribui o conteúdo verticalmente */
+}
+
+.card .back {
+  background-color: #f1f1f1;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.card.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .back {
+  transform: rotateY(0deg);
+}
+
+/* Estilos para o título */
+.card h3 {
+  font-size: 18px;
+  margin: 0 0 10px 0; /* Margem apenas na parte inferior */
+  height: 40px; /* Altura fixa para o título */
+  overflow: hidden; /* Evita que o texto vaze */
+  text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limita o título a 2 linhas */
+  -webkit-box-orient: vertical;
+}
+
+/* Estilos para a barra de progresso */
+.progress-bar-container {
+  width: 100%;
+  height: 5px;
+  background-color: #e0e0e0;
+  border-radius: 2px;
+  margin: 10px 0; /* Margem acima e abaixo */
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4CAF50;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.progress-tooltip {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.progress-bar-container:hover .progress-tooltip {
+  opacity: 1;
+}
+
+/* Estilos para os botões */
+.button-container {
+  margin-top: auto; /* Empurra os botões para a parte inferior */
+}
+
+.course-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  width: 100%; /* Faz o botão ocupar a largura total */
+  box-sizing: border-box; /* Garante que o padding não afete a largura */
+}
+
+.course-button-none {
+  display: none;
+}
+
+.course-button:hover {
+  background-color: #0056b3;
+}
+
+.source-code-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  gap: 8px;
+  width: 100%; /* Faz o botão ocupar a largura total */
+  box-sizing: border-box; /* Garante que o padding não afete a largura */
+}
+
+.source-code-button i {
+  font-size: 18px;
+}
+
+.source-code-button:hover {
+  background-color: #555;
+}
+
+.display-none {
+  display: none;
+}
+
+/* Container flexível para os cards */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espaço entre os cards */
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove paddings padrão */
+}
+
+/* SIDE BAR */
+
+/* Estilos para a sidebar fechada */
+.sidebar {
+  height: 100%;
+  width: 50px; /* Largura da sidebar fechada */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+/* Centraliza os ícones quando a sidebar está fechada */
+.sidebar .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 0; /* Espaçamento vertical */
+}
+
+/* Esconde o texto e o ícone de seta quando a sidebar está fechada */
+.sidebar .menu span,
+.sidebar .menu .fa-caret-down {
+  display: none;
+}
+
+/* Ajusta o ícone do botão de abrir/fechar */
+.sidebar .openbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 0; /* Espaçamento vertical */
+}
+
+/* Ajusta o ícone do accordion */
+.sidebar .accordion-btn .icon {
+  margin: 0; /* Remove margens para centralizar */
+}
+
+/* Ajusta o ícone dos submenus */
+.sidebar .submenu .icon {
+  margin: 0; /* Remove margens para centralizar */
+}
+
+/* Estilos para a sidebar aberta */
+.sidebar.open {
+  width: 250px; /* Largura da sidebar aberta */
+}
+
+.sidebar.open .menu span,
+.sidebar.open .menu .fa-caret-down {
+  display: inline; /* Mostra o texto e o ícone de seta quando a sidebar está aberta */
+}
+
+/* Estilo para o botão desabilitado */
+.course-button.disabled {
+  background-color: #ccc; /* Cor de fundo mais clara */
+  cursor: not-allowed; /* Cursor indicando que não é clicável */
+  opacity: 0.6; /* Torna o botão mais transparente */
+  color: #444242;
+}

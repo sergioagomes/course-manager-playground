@@ -1,0 +1,38 @@
+{
+  "Courses": [
+    {
+      "title": "Orquestração de containers com Kubernetes",
+      "progress": 100,
+      "acquisitionDate": "20/02/2025",
+      "startDate": "20/02/2025",
+      "endDate": "",
+      "link": "https://cursos.alura.com.br/formacao-kubernetes",
+      "image": "",
+      "platform": "Alura",
+      "duration": 2.5,
+      "instructor": "",
+      "price": "",
+      "certificate": "",
+      "tags": ["ead", "gamification", "pay", "alura"],
+      "category": "active",
+      "backText": "teste."
+    },
+    {
+      "title": "Aprofunde em .NET com Arquitetura de Microsserviços e RabbitMQ",
+      "progress": 100,
+      "acquisitionDate": "01/01/2025",
+      "startDate": "01/01/2025",
+      "endDate": "",
+      "link": "https://cursos.alura.com.br/formacao-dotnet-microsservicos",
+      "image": "",
+      "platform": "Alura",
+      "duration": 2.5,
+      "instructor": "",
+      "price": "",
+      "certificate": "",
+      "tags": ["ead", "gamification", "pay", "alura"],
+      "category": "active",
+      "backText": "teste."
+    }
+  ]
+}
